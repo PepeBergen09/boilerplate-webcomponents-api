@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Fetch data from json</h1>
+        <button onclick="myResponse()">retrive data</button>
+        <p id="response1">text</p>
+    </div>
+
+    <script>
+        const myFetch = fetch('http://localhost/BOILERPLATE/boilerplate-webcomponents-api/backend/data.json')
+        .then( response => response.json()) // convert to json
+        .then(data => {
+            console.log(data.message)  
+        })
+        .catch(err => console.log('Request Failed', err)); // Catch errors
+
+        function responseMessage(){
+            document.getElementById("response1").innerHTML = myFetch;   
+        }
+
+        const myResponse = () => {
+            console.log("Test")
+            console.log(myFetch.then(a => console.log(a)))
+            // myFetch.then(a => a.message)
+        }
+    </script>
+    
+</body>
+</html>

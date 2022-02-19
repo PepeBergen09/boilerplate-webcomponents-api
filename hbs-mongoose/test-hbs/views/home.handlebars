@@ -1,0 +1,14 @@
+<h1>Hello</h1>
+<form action="/createPost" method="post">
+    <label for="">Username</label>
+    <input type="text" name="username">
+    <button type="submit">Submit</button>
+</form>
+
+<a href="/">Return</a>
+
+{{#if username}}
+<h1>{{username}}</h1>
+{{else}}
+<h2>No vaue</h2>
+{{/if}}
